@@ -1,5 +1,11 @@
-<% @books.each do |book| %>
-  <%= book.title %>
+
+<% if @books.any? %>
+  <% @books.each do |book| %>
+    <%= book.title %>
+  <% end %>
+<% else %>
+  <h1>No books on this bookshelf</h1>
 <% end %>
-<h1>No books on this bookshelf</h1>
+
 <h1><%= link_to "Add a book", new_book_path %></h1>
+
