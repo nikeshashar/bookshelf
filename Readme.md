@@ -1,0 +1,1 @@
+An open source project to create a library for the students at Makers Academy
