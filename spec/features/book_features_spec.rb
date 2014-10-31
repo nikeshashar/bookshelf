@@ -13,21 +13,19 @@ describe "Book Page" do
     before  do 
       @book = create(:book)
       @book2 = create(:book2)
+      visit books_path 
     end 
 
     it "has a book" do    
-      visit books_path 
       expect(page).to have_content "Rails for Dummies"
     end
 
     it "has multiple books" do
-      visit books_path
       expect(page).to have_content "Rails for Dummies"
       expect(page).to have_content "Javascript for Dummies"
     end
 
     it "can add a book to the shelf using a form" do
-      visit books_path
       click_link 'Add a book'
       within '.book-form' do
         fill_in "Title", with: "Rails for Dummies"
@@ -38,7 +36,6 @@ describe "Book Page" do
     end
 
     it "hides no books notice when there is a book" do
-      visit books_path
       expect(page).not_to have_content "No books on this bookshelf"
     end
   end
