@@ -16,14 +16,11 @@ describe "Book Page" do
     end 
 
     it "has a book" do    
-      # book = Book.create title: "Rails for Dummies"
       visit books_path 
       expect(page).to have_content "Rails for Dummies"
     end
 
     it "has multiple books" do
-      # book = Book.create title: "Rails for Dummies"
-      # book2 = Book.create title: "Javascript for Dummies"
       visit books_path
       expect(page).to have_content "Rails for Dummies"
       expect(page).to have_content "Javascript for Dummies"
@@ -41,7 +38,6 @@ describe "Book Page" do
     end
 
     it "hides no books notice when there is a book" do
-      # book = Book.create title: "Rails for Dummies"
       visit books_path
       expect(page).not_to have_content "No books on this bookshelf"
     end
