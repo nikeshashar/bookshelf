@@ -1,4 +1,4 @@
-<% if @book %>
-  <%= @book.title %>
+<% @books.each do |book| %>
+  <%= book.title %>
 <% end %>
 <h1>No books on this bookshelf</h1>
