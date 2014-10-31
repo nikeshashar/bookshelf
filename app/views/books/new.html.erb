@@ -1,0 +1,7 @@
+<section class="book-form">
+	<%= form_for @book do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+		<%= f.submit "Add book" %>
+	<% end %>
+</section>
