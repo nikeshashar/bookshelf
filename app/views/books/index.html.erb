@@ -2,6 +2,9 @@
 <% if @books.any? %>
   <% @books.each do |book| %>
     <%= book.title %>
+    Language: <%= book.language %>
+    <%= book.isbn %>
+    <%= book.sku %>
   <% end %>
 <% else %>
   <h1>No books on this bookshelf</h1>

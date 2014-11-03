@@ -29,10 +29,16 @@ describe "Book Page" do
       click_link 'Add a book'
       within '.book-form' do
         fill_in "Title", with: "Rails for Dummies"
+        fill_in "Language", with: "Rails"
+        fill_in "Isbn", with: "12345678"
+        fill_in "Sku", with: "MA001"
         click_button "Add book"
       end
       expect(current_path).to eq books_path
       expect(page).to have_content "Rails for Dummies"
+      expect(page).to have_content "Language: Rails"
+      expect(page).to have_content "12345678"
+      expect(page).to have_content "MA001"
     end
 
     it "hides no books notice when there is a book" do

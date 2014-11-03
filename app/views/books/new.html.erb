@@ -2,6 +2,16 @@
 	<%= form_for @book do |f| %>
 		<%= f.label :title %>
 		<%= f.text_field :title %>
+
+    <%= f.label :language %>
+    <%= f.text_field :language %>
+
+    <%= f.label :isbn %>
+    <%= f.text_field :isbn %>
+
+    <%= f.label :sku %>
+    <%= f.text_field :sku %>
+
 		<%= f.submit "Add book" %>
 	<% end %>
 </section>

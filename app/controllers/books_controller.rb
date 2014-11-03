@@ -8,7 +8,7 @@ class BooksController < ApplicationController
 	end
 
 	def create
-		@book = Book.new params[:book].permit(:title)
+		@book = Book.new params[:book].permit(:title, :language, :isbn, :sku)
 		@book.save
 		redirect_to books_path
 	end
